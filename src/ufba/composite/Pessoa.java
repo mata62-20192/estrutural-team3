@@ -1,13 +1,16 @@
 package ufba.composite;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Membro{
 	String nome;
 	double experiencia;
 	
-	public String getNome() {
+	public String getNome()
+	{
 		return this.nome;
 	}
+
 	public double getExperiencia() {
+
 		return this.experiencia;
 	}
 	
