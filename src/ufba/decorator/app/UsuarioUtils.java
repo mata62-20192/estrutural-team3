@@ -2,7 +2,7 @@ package ufba.decorator.app;
 
 import ufba.decorator.lib.Usuario;
 
-class UsuarioUtils {
+public class UsuarioUtils {
 	public static boolean ehValido(Usuario u) {
 		return !u.getUsername().contains(",") &&
 				!u.getEmail().contains(",") &&
