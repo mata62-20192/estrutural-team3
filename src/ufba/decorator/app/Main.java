@@ -21,6 +21,7 @@ public class Main {
 		UsuarioDAO usuario = new UsuarioDAOAutenticacaoDecorator("192.168.7.100", new UsuarioArquivoDAO());
 		usuario.apagarTudo();
 		usuario.inserir(u);
+
 		u = usuario.obter("fulano");
 			System.out.println(usuario.obter("fulano").getEmail());
 			System.out.println(usuario.obter("fulano").getNomeCompleto());
