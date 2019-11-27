@@ -8,14 +8,40 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		UsuarioMemoriaDAO userPrincipal = new UsuarioMemoriaDAO();
-		Usuario usuario2 = new Usuario();
+		Usuario u = new Usuario();
+		u.setEmail("ab123@email.com");
+		u.setNomeCompleto("Fulano");
+		u.setUsername("fulano");
 
-		UsuarioDAOFiltroDecorator usuFiltro = new UsuarioDAOFiltroDecorator(userPrincipal);
-		UsuarioDAOAutenticacaoDecorator usuAuto = new UsuarioDAOAutenticacaoDecorator(userPrincipal);
+		Usuario v = new Usuario();
+		v.setEmail("abcdef123456@email.com");
+		v.setNomeCompleto("Sicr,ana");
+		v.setUsername("s,i,c,r,a,n,a");
 
-		usuario2.setUsername("Igor");
-		usuario2.setEmail("igmalte2@gmail.com");
-		usuario2.setNomeCompleto("Igor Souza Carvalho");
+		UsuarioDAO usuario = new UsuarioDAOAutenticacaoDecorator("192.168.7.100", new UsuarioArquivoDAO());
+		usuario.apagarTudo();
+		usuario.inserir(u);
+		u = usuario.obter("fulano");
+			System.out.println(usuario.obter("fulano").getEmail());
+			System.out.println(usuario.obter("fulano").getNomeCompleto());
+			System.out.println(usuario.obter("fulano").getUsername());
+
+        UsuarioDAO usuarioDAO1 = new UsuarioDAOAutenticacaoDecorator("192.168.0.100",new UsuarioArquivoDAO());
+        usuarioDAO1.inserir(u);
+        usuario.obter("fulano");
+        System.out.println(usuarioDAO1.obter("fulano").getEmail());
+        System.out.println(usuarioDAO1.obter("fulano").getNomeCompleto());
+        System.out.println(usuarioDAO1.obter("fulano").getUsername());
+
+		UsuarioDAO usuarioDAO2 = new UsuarioDAOAutenticacaoDecorator("192.168.0.100", new UsuarioMemoriaDAO());
+		usuarioDAO2.inserir(u);
+		System.out.println(usuarioDAO2.obter("fulano").getEmail());
+		System.out.println(usuarioDAO2.obter("fulano").getNomeCompleto());
+		System.out.println(usuarioDAO2.obter("fulano").getUsername());
+
+		UsuarioDAO usuarioFiltro = new UsuarioDAOFiltroDecorator(new UsuarioMemoriaDAO());
+		usuarioFiltro.inserir(v);
+		System.out.println(usuarioFiltro.obter("s,i,c,r,a,n,a").getEmail());
+		System.out.println(usuarioFiltro.obter("sicrana").getUsername());
 	}
 }

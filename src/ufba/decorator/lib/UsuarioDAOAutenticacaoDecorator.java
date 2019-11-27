@@ -3,16 +3,14 @@ package ufba.decorator.lib;
 
 import ufba.decorator.app.UsuarioUtils;
 
-
 public  class UsuarioDAOAutenticacaoDecorator implements UsuarioDAO{
     private  String IP;
     UsuarioDAO UserUnico;
 
-    public UsuarioDAOAutenticacaoDecorator(UsuarioDAO UserUnico){
+    public UsuarioDAOAutenticacaoDecorator(String IP, UsuarioDAO UserUnico){
         this.UserUnico = UserUnico;
+        this.IP = IP;
     }
-
-
 
     @Override
     public void apagarTudo() {
