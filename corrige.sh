@@ -8,7 +8,7 @@
 # Se a saída for 1 1, seu programa contém ambos os padrões solicitados
 #
 
-java -jar /opt/pattern4.jar -target bin -output out.xml
+java -jar pattern4.jar -target bin -output out.xml
 
 temDecorator=0
 temComposite=0

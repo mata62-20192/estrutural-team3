@@ -2,6 +2,7 @@ package ufba.composite;
 
 public class Main {
   public static void main(String[] args) {
+
   	Programador gates = new Programador("Bill Gates", 1.0);
   	Programador allen = new Programador("Paul Allen", 1.2);
   	Programador torvalds = new Programador("Linus Torvalds", 1.5);
