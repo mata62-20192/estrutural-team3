@@ -1,7 +1,6 @@
 package ufba.composite;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Equipe implements Membro{
 	String nome;
