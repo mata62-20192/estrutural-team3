@@ -2,8 +2,6 @@ package ufba.decorator.app;
 
 import ufba.decorator.lib.*;
 
-import javax.print.attribute.standard.JobOriginatingUserName;
-
 public class Main {
 
 	public static void main(String[] args) {

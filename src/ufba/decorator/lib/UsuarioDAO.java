@@ -1,7 +1,9 @@
 package ufba.decorator.lib;
 
+//Interface
+
 public interface UsuarioDAO {
-	public void apagarTudo();
-	public void inserir(Usuario u);
-	public Usuario obter(String username);
+	void apagarTudo();
+	void inserir(Usuario u);
+	Usuario obter(String username);
 }

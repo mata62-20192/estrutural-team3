@@ -5,12 +5,14 @@ import ufba.decorator.app.UsuarioUtils;
 
 public  class UsuarioDAOAutenticacaoDecorator implements UsuarioDAO{
     private  String IP;
-    UsuarioDAO UserUnico;
+    private UsuarioDAO UserUnico;
 
     public UsuarioDAOAutenticacaoDecorator(String IP, UsuarioDAO UserUnico){
         this.UserUnico = UserUnico;
         this.IP = IP;
     }
+
+    //Implementação do UserDAOAuth
 
     @Override
     public void apagarTudo() {
