@@ -4,7 +4,4 @@ public interface Membro {
 
    String getNome();
    double getSalario();
-
-
-
 }
